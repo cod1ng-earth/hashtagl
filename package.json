@@ -1,0 +1,21 @@
+{
+  "name": "hashtags",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.18.0",
+    "dotenv": "^6.0.0",
+    "lodash.concat": "^4.5.0",
+    "lodash.flatten": "^4.4.0",
+    "lodash.sortby": "^4.7.0",
+    "lodash.without": "^4.4.0",
+    "micro": "^9.3.3",
+    "twit": "^2.2.11"
+  }
+}
