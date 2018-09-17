@@ -1,0 +1,6 @@
+{
+    "env": {
+      "CONSUMER_API_KEY": "@twitter-consumer-api-key",
+      "CONSUMER_API_SECRET": "@twitter-consumer-api-secret"
+    }
+}
