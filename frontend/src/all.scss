@@ -1,6 +1,11 @@
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 @import "../node_modules/bulma/sass/utilities/functions";
 
+$body-background-color: $black-bis;
+$body-color: $white-bis;
+$title-color: $white-ter;
+$label-color: $white-ter;
+$tag-radius: 0;
 
 @import "../node_modules/bulma/sass/utilities/derived-variables";
 @import "../node_modules/bulma/bulma";

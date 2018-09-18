@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import {Section, Container, Field, Label, Control, Input, TextArea} from 'bloomer';
+import {Section, Container, Title, Field, Label, Control, Input, TextArea, Icon, Image} from 'bloomer';
 
 import Results from './Results';
+import logo_txb from './thashb.png';
 
 import './all.css'
 
@@ -63,22 +64,27 @@ class App extends Component {
     const dots = [".\n.\n.\n.\n.\n"]
     return (
       <div>
+        <Section>
+          <Container >
+            <Image  src={logo_txb} style={{width: '40vw', margin: '0 auto'}}></Image>
+          </Container>
+        </Section>
       <Section isSize="medium">
         <Container>
           <form onSubmit={this.submitted}>
           <Field>
-            <Label isSize="large">#Tag</Label>
-            <Control className={this.state.loading ? "is-loading" : "has-icons-left"}>
-               <span class="icon is-medium is-left"><i class="fas fa-envelope"></i></span>
-                <Input type="text" 
-                       disabled={this.state.loading}
-                       placeholder='one tag only' 
-                       className="is-rounded" 
-                       isSize="large" 
-                       value={this.state.tag} 
-                       onChange={this.handleTagChange} 
-                      />
+            <Label isSize="large">search tags for</Label>
+              <Control className={"is-large has-icons-left has-icons-right " + (this.state.loading ? "is-loading" : "")}>
+              
+              <Input type="text" 
+                      disabled={this.state.loading}
+                      placeholder='one tag only' 
+                      className="is-rounded is-large" 
                       
+                      value={this.state.tag} 
+                      onChange={this.handleTagChange} 
+                    />
+              <Icon className="icon is-large is-left"><i class="fa fa-hashtag"></i></Icon>
             </Control>
           </Field>
           </form>
@@ -87,14 +93,22 @@ class App extends Component {
 
       <Section>
         <Container>
-        <Results tags={this.state.tags} onTagToggle={this.toggle}/>
-        <Field>
-          <Control>
-              <TextArea placeholder="copy this" value={texttags ? dots + texttags : ''} readOnly />
-          </Control>
-        </Field>
+          <Results tags={this.state.tags} onTagToggle={this.toggle}/>
         </Container>
       </Section>
+
+      {texttags.length > 0 && 
+      <Section>
+        <Container>
+          <Field>
+            <Label isSize="large">copy this</Label>
+              <Control>
+                  <TextArea isSize="large" rows={10} placeholder="copy this" value={texttags ? dots + texttags : ''} readOnly />
+              </Control>
+            </Field>
+          </Container>
+      </Section>
+      }
       </div>
     );
   }
