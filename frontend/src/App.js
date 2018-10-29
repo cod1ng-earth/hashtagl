@@ -143,8 +143,8 @@ class App extends Component {
                     rows={10}
                     placeholder="copy this"
                     value={texttags ? dots + texttags : ""}
+                    readOnly
                   />
-                  readOnly />
                 </Control>
               </Field>
             </Container>
