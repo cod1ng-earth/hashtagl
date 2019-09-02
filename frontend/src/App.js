@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   _fetch(tag) {
-    const url = process.env.REACT_APP_API_ENDPOINT + "?tag=" + tag;
+    const url = process.env.REACT_APP_API_ENDPOINT + "/tags/?tag=" + tag;
 
     this.setState({ loading: true });
     fetch(url, {
