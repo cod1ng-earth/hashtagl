@@ -8,10 +8,11 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/index.js",
+            "program": "${workspaceFolder}/ht.js",
             "args": [
-                "search",
-                "nodejs"
+                "followers",
+                "stadolf",
+                "Leipzig"
             ]
         }
     ]
