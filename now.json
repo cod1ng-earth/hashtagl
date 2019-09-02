@@ -2,5 +2,7 @@
     "env": {
       "CONSUMER_API_KEY": "@twitter-consumer-api-key",
       "CONSUMER_API_SECRET": "@twitter-consumer-api-secret"
-    }
+    },
+    "builds": [{ "src": "index.js", "use": "@now/node" }],
+    "routes": [{ "src": "/(.*)", "dest": "/" }]
 }
