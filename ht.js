@@ -19,18 +19,22 @@ program.command('search <tag> [otherTags...]').action((tag, otherTags) => {
     })
 })
 
-program.command('followers <user> <filter...>').action(async (user, filter) => {
-  // console.log(filter)
-  const followers = await Followers(user, filter.map(f => f.toLowerCase()))
-  console.dir(followers.map(f => ({
-    name: f.name,
-    screen_name: f.screen_name,
-    location: f.location,
-    description: f.description,
-    url: f.url,
-    twUrl: `https://twitter.com/${f.screen_name}`,
-    id: f.id_str
-  })))
-})
+program.command('followers <user> <filter...>')
+  .option('-c, --cursor <cursor>', 'an initial cursor', -1)
+  .action(async (user, filter, cmdObj) => {
+    console.log(filter)
+    console.log(cmdObj.cursor)
+    const followers = await Followers(user, filter.map(f => f.toLowerCase()))
+
+    console.dir(followers.map(f => ({
+      name: f.name,
+      screen_name: f.screen_name,
+      location: f.location,
+      description: f.description,
+      url: f.url,
+      twUrl: `https://twitter.com/${f.screen_name}`,
+      id: f.id_str
+    })))
+  })
 
 program.parse(process.argv)
